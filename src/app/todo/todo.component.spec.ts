@@ -6,10 +6,12 @@ describe('TodoComponent', () => {
   let component: TodoComponent;
   let fixture: ComponentFixture<TodoComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [TodoComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [TodoComponent]
+    })
+    .compileComponents();
+    
     fixture = TestBed.createComponent(TodoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
