@@ -79,7 +79,7 @@ export class TodoComponent implements OnInit {
     if (!updatedItemName) return; 
   
     try {
-      const response = await axios.put(`https://finalexam-p1tj.onrender.com/update/${item.id}`, { itemName: updatedItemName });
+      const response = await axios.put(`https://backend-6rk6.onrender.com/update/${item.id}`, { itemName: updatedItemName });
       const updatedItemIndex = this.todoList.findIndex(todo => todo.id === item.id);
       if (updatedItemIndex !== -1) {
         this.todoList[updatedItemIndex].itemName = response.data.itemName; 
@@ -91,7 +91,7 @@ export class TodoComponent implements OnInit {
 
   async deleteItem(itemId: any) { 
     try {
-      await axios.delete(`https://finalexam-p1tj.onrender.com/todo/${itemId}`);
+      await axios.delete(`https://backend-6rk6.onrender.com/todo/${itemId}`);
       this.todoList = this.todoList.filter(item => item.id !== itemId);
     } catch(error) {
       console.log('Error deleting item:', error);
